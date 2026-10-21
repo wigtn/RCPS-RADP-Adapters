@@ -1,7 +1,11 @@
 # RCPS/RADP parser-training adapters
 
+[![EMNLP 2026](https://img.shields.io/badge/EMNLP_2026-Industry_Track_·_Accepted-4F46E5?style=flat-square)](https://github.com/wigtn/WigtnOCR-RADP)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-181717?style=flat-square&logo=github)](https://github.com/wigtn/RCPS-RADP-Adapters/releases/tag/v1.0.0)
+
 This release contains the nine final LoRA adapters evaluated in *Retrieval-Conditional
-Parsing Score (RCPS): Choosing Document Parsers by Retrieval, Not by Appearance*.
+Parsing Score (RCPS): Choosing Document Parsers by Retrieval, Not by Appearance*,
+accepted to the **EMNLP 2026 Industry Track** (Submission #384).
 It includes the RADP-aux lambda sweep, RADP-DPO R1--R3,
 RADP-Distill, and the SimPO control. These checkpoints support the paper's
 secondary negative-result study; they are not a new production recommendation.
@@ -14,6 +18,14 @@ trained from [`Qwen/Qwen3-VL-2B-Instruct`](https://huggingface.co/Qwen/Qwen3-VL-
 then evaluated in the paper by applying its adapter to the Prod base. The
 per-variant `adapter_config.json` records the training base, while `manifest.json`
 records both training and evaluation bases.
+
+## Where these adapters fit
+
+| Step | Repository | What it holds |
+|---|---|---|
+| 1 | [`wigtn/wigtnOCR-v1`](https://github.com/wigtn/wigtnOCR-v1) | Distillation of Qwen3-VL-30B pseudo-labels into `Wigtn/Qwen3-VL-2B-WigtnOCR`, the base these adapters load onto (called *Prod* in the paper) |
+| 2 | [`wigtn/WigtnOCR-RADP`](https://github.com/wigtn/WigtnOCR-RADP) | The RCPS paper, evaluation code, the 663-Q–A KoGovDoc-RAG probe, and result artifacts |
+| 3 | This repository | The nine LoRA adapters from the paper's secondary parser-training study |
 
 ## Variants
 
@@ -63,3 +75,15 @@ The repository release builder verifies the original weights before staging.
 See the main repository's
 [`CHECKPOINT_RELEASE.md`](https://github.com/wigtn/WigtnOCR-RADP/blob/main/docs/provenance/CHECKPOINT_RELEASE.md)
 for the inclusion policy and CPU-only verification command.
+
+## Citation
+
+```bibtex
+@inproceedings{son2026rcps,
+  title     = {Retrieval-Conditional Parsing Score (RCPS): Choosing Document Parsers by Retrieval, Not by Appearance},
+  author    = {Son, Sang-Woo and Kim, Hyeong-seob and Kim, Hyeonsang and Cho, Hyun-woo and Kim, Jinmo},
+  booktitle = {Proceedings of EMNLP 2026 (Industry Track)},
+  year      = {2026},
+  note      = {Accepted}
+}
+```
