@@ -1,11 +1,11 @@
 # RCPS/RADP parser-training adapters
 
-[![EMNLP 2026](https://img.shields.io/badge/EMNLP_2026-Industry_Track_·_Accepted-4F46E5?style=flat-square)](https://github.com/wigtn/WigtnOCR-RADP)
+[![EMNLP 2026](https://img.shields.io/badge/EMNLP_2026-Industry_Track-4F46E5?style=flat-square)](https://aclanthology.org/2026.emnlp-industry.90/)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-181717?style=flat-square&logo=github)](https://github.com/wigtn/RCPS-RADP-Adapters/releases/tag/v1.0.0)
 
 This release contains the nine final LoRA adapters evaluated in *Retrieval-Conditional
 Parsing Score (RCPS): Choosing Document Parsers by Retrieval, Not by Appearance*,
-accepted to the **EMNLP 2026 Industry Track** (Submission #384).
+published in the Proceedings of the **EMNLP 2026 Industry Track** ([ACL Anthology](https://aclanthology.org/2026.emnlp-industry.90/)).
 It includes the RADP-aux lambda sweep, RADP-DPO R1--R3,
 RADP-Distill, and the SimPO control. These checkpoints support the paper's
 secondary negative-result study; they are not a new production recommendation.
@@ -80,10 +80,15 @@ for the inclusion policy and CPU-only verification command.
 
 ```bibtex
 @inproceedings{son2026rcps,
-  title     = {Retrieval-Conditional Parsing Score (RCPS): Choosing Document Parsers by Retrieval, Not by Appearance},
+  title     = {Retrieval-Conditional Parsing Score ({RCPS}): Choosing Document Parsers by Retrieval, Not by Appearance},
   author    = {Son, Sang-Woo and Kim, Hyeong-seob and Kim, Hyeonsang and Cho, Hyun-woo and Kim, Jinmo},
-  booktitle = {Proceedings of EMNLP 2026 (Industry Track)},
+  editor    = {Atanasova, Pepa and Haffari, Gholamreza and Wang, Minghan},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing: Industry Track},
+  month     = oct,
   year      = {2026},
-  note      = {Accepted}
+  address   = {Budapest, Hungary},
+  publisher = {Association for Computational Linguistics},
+  pages     = {1531--1544},
+  url       = {https://aclanthology.org/2026.emnlp-industry.90/}
 }
 ```
